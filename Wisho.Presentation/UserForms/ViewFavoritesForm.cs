@@ -176,7 +176,7 @@ namespace Wisho.Presentation.UserForms
                     }
                 }
 
-                body += "\n\n\nChaybon Verlooy - Owner Wisho";
+                body += $"\n\n\nKing Regards,\n{User.Rows[0]["Username"].ToString()}";
 
                 try
                 {
