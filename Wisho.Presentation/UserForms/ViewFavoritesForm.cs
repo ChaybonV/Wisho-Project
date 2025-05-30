@@ -170,9 +170,9 @@ namespace Wisho.Presentation.UserForms
                         {
                             if (child is Label lbl)
                             {
-                                if (lbl.Location.X < 150)
+                                if (lbl.Location.X < 150) // First label = name
                                     productName = lbl.Text;
-                                else if (lbl.Location.X >= 150)
+                                else if (lbl.Location.X >= 150) // Second label = price
                                     price = lbl.Text;
                             }
                         }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data;
 using Wisho.DataAccess;
-using System.Drawing;
-using Wisho.BusinessLogic;
 
 
 namespace Wisho.BusinessLogic

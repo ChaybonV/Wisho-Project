@@ -3,9 +3,6 @@ using System.Text.RegularExpressions;
 using Wisho.BusinessLogic;
 using System.Net;
 using System.Net.Mail;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 
 
 namespace Wisho.Presentation
