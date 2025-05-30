@@ -3,7 +3,7 @@ using System.Data;
 using Wisho.BusinessLogic;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace Wisho.Presentation
 {
@@ -18,6 +18,7 @@ namespace Wisho.Presentation
             InitializeComponent();
         }
         int id;
+
         private void AdminProfileManagementForm_Load(object sender, EventArgs e)
         {
             if (User != null && User.Rows.Count > 0)
@@ -28,10 +29,31 @@ namespace Wisho.Presentation
                 tb_UserName.Text = userRow["Username"].ToString();
                 tb_Address.Text = userRow["Address"].ToString();
                 numberic_Age.Value = Convert.ToInt32(userRow["Age"]);
+
+                LoadProfileImage();
             }
             else
             {
                 MessageBox.Show("User data is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadProfileImage()
+        {
+            byte[] imageData = userService.GetUserProfileImage(id);
+            if (imageData != null && imageData.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image profileImage = Image.FromStream(ms);
+                    pictureBox1.Image = profileImage;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.icProfile; // Use default image if one has not set own image
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -53,6 +75,7 @@ namespace Wisho.Presentation
         string email;
         string address;
         int age;
+
         private void btn_updateProfile_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tb_UserName.Text) ||
@@ -82,7 +105,7 @@ namespace Wisho.Presentation
 
         private void btn_deleteAccount_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to delete your account?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            var confirmResult = MessageBox.Show("Are you sure you want to delete your account?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmResult == DialogResult.Yes)
             {
                 int result = userService.deleteUser(id);
@@ -119,6 +142,40 @@ namespace Wisho.Presentation
             AdminDashBoard dashBoard = new AdminDashBoard(User);
             dashBoard.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            openFileDialog.Title = "Select Profile Picture";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Image selectedImage = Image.FromFile(openFileDialog.FileName);
+                byte[] imageBytes = ImageToByteArray(selectedImage);
+
+                int result = userService.UpdateUserProfileImage(id, imageBytes);
+                if (result > 0)
+                {
+                    pictureBox1.Image = selectedImage;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    MessageBox.Show("Profile picture updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update profile picture.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
     }
 }

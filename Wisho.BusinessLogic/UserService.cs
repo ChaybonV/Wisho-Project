@@ -87,5 +87,40 @@ namespace Wisho.BusinessLogic
             int rowAffected = dbContext.ExecuteNonQuery(query);
             return rowAffected;
         }
+
+        public int UpdateUserProfileImage(int userId, byte[] imageData)
+        {
+            // First check if a record already exists
+            string checkQuery = $"SELECT COUNT(*) FROM UserProfileImages WHERE UserId = {userId}";
+            DataTable checkResult = dbContext.ExecuteQuery(checkQuery);
+
+            string query;
+            if (checkResult.Rows.Count > 0 && Convert.ToInt32(checkResult.Rows[0][0]) > 0)
+            {
+                query = $"UPDATE UserProfileImages SET ProfileImage = @imageData WHERE UserId = {userId}";
+            }
+            else
+            {
+                query = $"INSERT INTO UserProfileImages (UserId, ProfileImage) VALUES ({userId}, @imageData)";
+            }
+
+            string base64Image = Convert.ToBase64String(imageData);
+            string finalQuery = query.Replace("@imageData", $"'{base64Image}'");
+            return dbContext.ExecuteNonQuery(finalQuery);
+        }
+
+        public byte[] GetUserProfileImage(int userId)
+        {
+            string query = $"SELECT ProfileImage FROM UserProfileImages WHERE UserId = {userId}";
+            DataTable result = dbContext.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0 && result.Rows[0]["ProfileImage"] != DBNull.Value)
+            {
+                string base64String = result.Rows[0]["ProfileImage"].ToString();
+                return Convert.FromBase64String(base64String);
+            }
+
+            return null;
+        }
     }
 }

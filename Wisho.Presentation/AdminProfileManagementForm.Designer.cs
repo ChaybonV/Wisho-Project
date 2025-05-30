@@ -41,6 +41,7 @@
             pc_LogOut = new PictureBox();
             ic_back = new PictureBox();
             btn_deleteAccount = new Button();
+            lb_profileImageHint = new Label();
             ((System.ComponentModel.ISupportInitialize)numberic_Age).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pc_LogOut).BeginInit();
@@ -217,6 +218,8 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 85;
             pictureBox1.TabStop = false;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pc_LogOut
             // 
@@ -254,6 +257,18 @@
             btn_deleteAccount.UseVisualStyleBackColor = false;
             btn_deleteAccount.Click += btn_deleteAccount_Click;
             // 
+            // lb_profileImageHint
+            // 
+            lb_profileImageHint.AutoSize = true;
+            lb_profileImageHint.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            lb_profileImageHint.ForeColor = Color.FromArgb(146, 160, 144);
+            lb_profileImageHint.Location = new Point(35, 340);
+            lb_profileImageHint.Name = "lb_profileImageHint";
+            lb_profileImageHint.Size = new Size(223, 15);
+            lb_profileImageHint.TabIndex = 88;
+            lb_profileImageHint.Text = "Klik op de afbeelding om deze te wijzigen";
+            lb_profileImageHint.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // AdminProfileManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,6 +276,7 @@
             BackColor = Color.FromArgb(247, 236, 230);
             ClientSize = new Size(715, 620);
             ControlBox = false;
+            Controls.Add(lb_profileImageHint);
             Controls.Add(pc_LogOut);
             Controls.Add(ic_back);
             Controls.Add(pictureBox1);
@@ -315,5 +331,6 @@
         private PictureBox pictureBox1;
         private PictureBox pc_LogOut;
         private PictureBox ic_back;
+        private Label lb_profileImageHint;
     }
 }

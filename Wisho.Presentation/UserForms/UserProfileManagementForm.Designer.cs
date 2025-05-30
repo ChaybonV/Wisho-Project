@@ -45,6 +45,7 @@ namespace Wisho.Presentation.UserForms
             ic_back = new PictureBox();
             pictureBox1 = new PictureBox();
             btn_deleteAccount = new Button();
+            lb_profileImageHint = new Label();
             ((System.ComponentModel.ISupportInitialize)numberic_Age).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pc_LogOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ic_back).BeginInit();
@@ -244,6 +245,8 @@ namespace Wisho.Presentation.UserForms
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 83;
             pictureBox1.TabStop = false;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btn_deleteAccount
             // 
@@ -258,6 +261,18 @@ namespace Wisho.Presentation.UserForms
             btn_deleteAccount.UseVisualStyleBackColor = false;
             btn_deleteAccount.Click += btn_deleteAccount_Click;
             // 
+            // lb_profileImageHint
+            // 
+            lb_profileImageHint.AutoSize = true;
+            lb_profileImageHint.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            lb_profileImageHint.ForeColor = Color.FromArgb(146, 160, 144);
+            lb_profileImageHint.Location = new Point(28, 320);
+            lb_profileImageHint.Name = "lb_profileImageHint";
+            lb_profileImageHint.Size = new Size(223, 15);
+            lb_profileImageHint.TabIndex = 85;
+            lb_profileImageHint.Text = "Klik op de afbeelding om deze te wijzigen";
+            lb_profileImageHint.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // UserProfileManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -265,6 +280,7 @@ namespace Wisho.Presentation.UserForms
             BackColor = Color.FromArgb(247, 236, 230);
             ClientSize = new Size(725, 565);
             ControlBox = false;
+            Controls.Add(lb_profileImageHint);
             Controls.Add(pictureBox1);
             Controls.Add(pc_LogOut);
             Controls.Add(ic_back);
@@ -319,5 +335,6 @@ namespace Wisho.Presentation.UserForms
         private PictureBox pc_LogOut;
         private PictureBox ic_back;
         private PictureBox pictureBox1;
+        private Label lb_profileImageHint;
     }
 }

@@ -3,7 +3,7 @@ using System.Data;
 using Wisho.BusinessLogic;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace Wisho.Presentation.UserForms
 {
@@ -43,12 +43,34 @@ namespace Wisho.Presentation.UserForms
                 tb_UserName.Text = userRow["Username"].ToString();
                 tb_Address.Text = userRow["Address"].ToString();
                 numberic_Age.Value = Convert.ToInt32(userRow["Age"]);
+
+                LoadProfileImage();
             }
             else
             {
                 MessageBox.Show("User data is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LoadProfileImage()
+        {
+            byte[] imageData = userService.GetUserProfileImage(id);
+            if (imageData != null && imageData.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image profileImage = Image.FromStream(ms);
+                    pictureBox1.Image = profileImage;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.icProfile; // Use default image if one has not set own image
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
         string userName;
         string email;
         string address;
@@ -83,7 +105,7 @@ namespace Wisho.Presentation.UserForms
 
         private void btn_deleteAccount_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to delete your account?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            var confirmResult = MessageBox.Show("Are you sure you want to delete your account?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmResult == DialogResult.Yes)
             {
                 int result = userService.deleteUser(id);
@@ -100,7 +122,6 @@ namespace Wisho.Presentation.UserForms
                 }
             }
         }
-
 
         private void btn_changePassword_Click(object sender, EventArgs e)
         {
@@ -121,6 +142,47 @@ namespace Wisho.Presentation.UserForms
             UserDashBoard userDashBoard = new UserDashBoard(User);
             userDashBoard.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            openFileDialog.Title = "Select Profile Picture";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image selectedImage = Image.FromFile(openFileDialog.FileName);
+                    byte[] imageBytes = ImageToByteArray(selectedImage);
+
+                    int result = userService.UpdateUserProfileImage(id, imageBytes);
+                    if (result > 0)
+                    {
+                        pictureBox1.Image = selectedImage;
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        MessageBox.Show("Profile picture updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update profile picture.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating profile picture: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
     }
 }
