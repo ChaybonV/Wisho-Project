@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Net.Mail;
-using System.Windows.Forms;
 using Wisho.BusinessLogic;
+using System.Drawing;
+using System.Windows.Forms;
+
 
 namespace Wisho.Presentation.UserForms
 {
@@ -113,6 +114,12 @@ namespace Wisho.Presentation.UserForms
 
         private void btn_sendFavByMail_Click(object sender, EventArgs e)
         {
+            if (panel_favorites.Controls.Count == 0)
+            {
+                MessageBox.Show("Your favoritelist is empty. Add products before sending.", "Empty list", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Form prompt = new Form()
             {
                 Width = 400,
@@ -150,6 +157,7 @@ namespace Wisho.Presentation.UserForms
                 }
 
                 string body = $"Hello {(string.IsNullOrEmpty(name) ? "" : name)},\n\nHere is my favoritelist from Wisho:\n\n";
+                int itemsAdded = 0;
 
                 foreach (Control ctrl in panel_favorites.Controls)
                 {
@@ -162,9 +170,9 @@ namespace Wisho.Presentation.UserForms
                         {
                             if (child is Label lbl)
                             {
-                                if (lbl.Location.X < 150) // Eerste label = naam
+                                if (lbl.Location.X < 150)
                                     productName = lbl.Text;
-                                else if (lbl.Location.X >= 150) // Tweede label = prijs
+                                else if (lbl.Location.X >= 150)
                                     price = lbl.Text;
                             }
                         }
@@ -172,8 +180,15 @@ namespace Wisho.Presentation.UserForms
                         if (!string.IsNullOrEmpty(productName) && !string.IsNullOrEmpty(price))
                         {
                             body += $"- {productName} ({price})\n";
+                            itemsAdded++;
                         }
                     }
+                }
+
+                if (itemsAdded == 0)
+                {
+                    MessageBox.Show("Your favoritelist is empty. Nothing to send.", "Empty list", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
                 body += $"\n\n\nKing Regards,\n{User.Rows[0]["Username"].ToString()}";

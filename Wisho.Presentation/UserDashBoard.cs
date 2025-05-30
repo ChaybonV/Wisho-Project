@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using Wisho.Presentation.UserForms;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wisho.BusinessLogic;
-using Wisho.Presentation.UserForms;
+
 
 namespace Wisho.Presentation
 {

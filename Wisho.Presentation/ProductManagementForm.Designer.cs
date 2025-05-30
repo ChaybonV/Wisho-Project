@@ -211,7 +211,7 @@
             // pc_LogOut
             // 
             pc_LogOut.Image = (Image)resources.GetObject("pc_LogOut.Image");
-            pc_LogOut.Location = new Point(770, 348);
+            pc_LogOut.Location = new Point(770, 329);
             pc_LogOut.Margin = new Padding(3, 2, 3, 2);
             pc_LogOut.Name = "pc_LogOut";
             pc_LogOut.Size = new Size(68, 46);
@@ -236,7 +236,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(247, 236, 230);
-            ClientSize = new Size(850, 405);
+            ClientSize = new Size(850, 385);
             ControlBox = false;
             Controls.Add(lb_close);
             Controls.Add(pc_LogOut);

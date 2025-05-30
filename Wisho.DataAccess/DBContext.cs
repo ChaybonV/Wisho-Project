@@ -1,12 +1,8 @@
-﻿using MySqlConnector;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
-using Wisho.DataAccess;
+using MySqlConnector;
+
 
 namespace Wisho.DataAccess
 {
@@ -33,7 +29,7 @@ namespace Wisho.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception("Fout bij uitvoeren van query.", ex);
+                throw new Exception("Error when executing query", ex);
             }
             finally
             {
@@ -54,7 +50,7 @@ namespace Wisho.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception("Fout bij uitvoeren van non-query.", ex);
+                throw new Exception("Error when executing non-query", ex);
             }
             finally
             {

@@ -1,6 +1,9 @@
-using Microsoft.VisualBasic.Logging;
-using System.Configuration;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using Wisho.BusinessLogic;
+
 
 namespace Wisho.Presentation
 {
