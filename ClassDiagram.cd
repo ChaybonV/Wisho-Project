@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Wisho.Presentation.Properties.Resources">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAREAAAAQCABEAABAAAAACAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserForms.UserChangePasswordForm">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JABBAAAAACAAKBCBAACgQAACBAAiAgAAAIASAAFCAAM=</HashCode>
+      <FileName>UserForms\UserChangePasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserForms.UserProfileManagementForm">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hIBBqAVAACAAYIihIACAAAIGACMABAAABGAQAAFCAgM=</HashCode>
+      <FileName>UserForms\UserProfileManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserForms.ViewFavoritesForm">
+    <Position X="4.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABIAAAICAAAABJAACQABACIEBAAAAAAAAQAAECAgA=</HashCode>
+      <FileName>UserForms\ViewFavoritesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserForms.ViewProductForm">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABBEBABACAAAABBACCAAAgCAEDAAAAAAAAQAAECAgA=</HashCode>
+      <FileName>UserForms\ViewProductForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.AdminChangePasswordForm">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JABBAAAAACAAKBCBAACgQAACBAAiAgAAAIASAAFCAAM=</HashCode>
+      <FileName>AdminChangePasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.AdminDashBoard">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAAAAACAACBAAAEIABCAgACCAUAAAABAAAAQAQUIAAI=</HashCode>
+      <FileName>AdminDashBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.AdminProfileManagementForm">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hIBBoARAACAAYIihIACAAAIGACMABAAABOAQAAFCAgM=</HashCode>
+      <FileName>AdminProfileManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.CategoryManagementForm">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RgBBAFoQACIACBQBABCAkAACAAAAQAACAAAQAAECAgA=</HashCode>
+      <FileName>CategoryManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.LoginScreen">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAAYAAACQAAACAAAKAKASCAAAKBgAAEEAAAABAAAI=</HashCode>
+      <FileName>LoginScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.ProductManagementForm">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RgBFAHgQACIACBRBAJDIgAASAUAAQAAAAAAQAAECCgA=</HashCode>
+      <FileName>ProductManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.Program">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.SignUpSCreen">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wIAAgQAAACQAIEAgIgCAgAAGEAkCZiAADCAEAABAAhI=</HashCode>
+      <FileName>SignUpSCreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserDashBoard">
+    <Position X="6" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAABJQAAQCAQAAAAAACAgAACAAAAQACAAAgQAAUAAAI=</HashCode>
+      <FileName>UserDashBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.UserManagementForm">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>x5BFAYiYAKYADBSBeBCAoAASQAASRAkRAAjQgA0CAgI=</HashCode>
+      <FileName>UserManagementForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.Presentation.WelcomeScreen">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAgAACAAIAAAAACAAAAGAAACACAAAAAEAEBAAAA=</HashCode>
+      <FileName>WelcomeScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wisho.DataAccess.DBContext">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Wisho.BusinessLogic.CategoryService">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Wisho.BusinessLogic.FavoriteService">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Wisho.BusinessLogic.ProductService">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Wisho.BusinessLogic.UserService">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
