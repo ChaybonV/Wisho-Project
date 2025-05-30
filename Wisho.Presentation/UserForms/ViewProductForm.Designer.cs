@@ -48,9 +48,9 @@
             // 
             panel_products.AutoScroll = true;
             panel_products.BackColor = Color.White;
-            panel_products.Location = new Point(306, 124);
+            panel_products.Location = new Point(305, 97);
             panel_products.Name = "panel_products";
-            panel_products.Size = new Size(480, 179);
+            panel_products.Size = new Size(480, 267);
             panel_products.TabIndex = 67;
             // 
             // ic_back

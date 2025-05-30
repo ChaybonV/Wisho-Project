@@ -29,7 +29,7 @@
             btn_deleteFav.BackColor = Color.Red;
             btn_deleteFav.Font = new Font("Segoe UI", 10F);
             btn_deleteFav.ForeColor = Color.White;
-            btn_deleteFav.Location = new Point(91, 134);
+            btn_deleteFav.Location = new Point(91, 135);
             btn_deleteFav.Name = "btn_deleteFav";
             btn_deleteFav.Size = new Size(158, 59);
             btn_deleteFav.TabIndex = 0;
@@ -43,7 +43,7 @@
             btn_sendFavByMail.BackColor = Color.SteelBlue;
             btn_sendFavByMail.Font = new Font("Segoe UI", 10F);
             btn_sendFavByMail.ForeColor = Color.White;
-            btn_sendFavByMail.Location = new Point(91, 235);
+            btn_sendFavByMail.Location = new Point(91, 247);
             btn_sendFavByMail.Name = "btn_sendFavByMail";
             btn_sendFavByMail.Size = new Size(158, 59);
             btn_sendFavByMail.TabIndex = 1;
@@ -55,9 +55,9 @@
             // 
             panel_favorites.AutoScroll = true;
             panel_favorites.BackColor = Color.White;
-            panel_favorites.Location = new Point(388, 134);
+            panel_favorites.Location = new Point(373, 95);
             panel_favorites.Name = "panel_favorites";
-            panel_favorites.Size = new Size(400, 160);
+            panel_favorites.Size = new Size(400, 255);
             panel_favorites.TabIndex = 2;
             // 
             // pc_LogOut

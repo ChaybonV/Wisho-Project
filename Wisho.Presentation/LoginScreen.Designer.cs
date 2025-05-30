@@ -47,7 +47,7 @@ namespace Wisho.Presentation
             btn_clear.FlatStyle = FlatStyle.Flat;
             btn_clear.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             btn_clear.ForeColor = SystemColors.Window;
-            btn_clear.Location = new Point(611, 292);
+            btn_clear.Location = new Point(611, 298);
             btn_clear.Name = "btn_clear";
             btn_clear.Size = new Size(147, 55);
             btn_clear.TabIndex = 22;
@@ -60,7 +60,7 @@ namespace Wisho.Presentation
             checkBox_ShowPass.AutoSize = true;
             checkBox_ShowPass.Font = new Font("Segoe UI", 12F);
             checkBox_ShowPass.ForeColor = Color.FromArgb(146, 160, 144);
-            checkBox_ShowPass.Location = new Point(438, 226);
+            checkBox_ShowPass.Location = new Point(438, 227);
             checkBox_ShowPass.Name = "checkBox_ShowPass";
             checkBox_ShowPass.Size = new Size(138, 25);
             checkBox_ShowPass.TabIndex = 21;
@@ -74,7 +74,7 @@ namespace Wisho.Presentation
             lb_SignUp.Cursor = Cursors.Hand;
             lb_SignUp.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lb_SignUp.ForeColor = Color.FromArgb(59, 119, 149);
-            lb_SignUp.Location = new Point(602, 253);
+            lb_SignUp.Location = new Point(602, 259);
             lb_SignUp.Name = "lb_SignUp";
             lb_SignUp.Size = new Size(66, 21);
             lb_SignUp.TabIndex = 20;
@@ -86,7 +86,7 @@ namespace Wisho.Presentation
             lb_messageDonothave.AutoSize = true;
             lb_messageDonothave.Font = new Font("Segoe UI", 12F);
             lb_messageDonothave.ForeColor = Color.FromArgb(146, 160, 144);
-            lb_messageDonothave.Location = new Point(438, 253);
+            lb_messageDonothave.Location = new Point(438, 259);
             lb_messageDonothave.Name = "lb_messageDonothave";
             lb_messageDonothave.Size = new Size(171, 21);
             lb_messageDonothave.TabIndex = 19;
@@ -97,13 +97,13 @@ namespace Wisho.Presentation
             button1.BackColor = Color.Green;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(438, 292);
+            button1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            button1.ForeColor = SystemColors.Window;
+            button1.Location = new Point(438, 298);
             button1.Name = "button1";
             button1.Size = new Size(147, 55);
             button1.TabIndex = 18;
-            button1.Text = "LOGIN";
+            button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
