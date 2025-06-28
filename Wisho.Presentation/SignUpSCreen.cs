@@ -43,7 +43,7 @@ namespace Wisho.Presentation
             try
             {
                 string fromEmail = "chaybon2006@gmail.com";
-                string fromPassword = "wkzp ldto szcb grbu";
+                string fromPassword = "wkzp ldto szcb grbu"; //Needs to change with app passwords Google
 
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(fromEmail);

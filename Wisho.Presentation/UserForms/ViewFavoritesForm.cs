@@ -200,7 +200,7 @@ namespace Wisho.Presentation.UserForms
                     mail.Body = body;
 
                     SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                    client.Credentials = new System.Net.NetworkCredential("chaybon2006@gmail.com", "wkzp ldto szcb grbu");
+                    client.Credentials = new System.Net.NetworkCredential("chaybon2006@gmail.com", "wkzp ldto szcb grbu"); //Needs to change with app passwords Google
                     client.EnableSsl = true;
                     client.Send(mail);
 
